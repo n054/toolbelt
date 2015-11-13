@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Toolbelt by n054</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Toolbelt</h1>
+      <h2 class="project-tagline">Gemnasium toolbelt is a CLI for the Gemnasium API.</h2>
+      <a href="https://github.com/n054/toolbelt" class="btn">View on GitHub</a>
+      <a href="https://github.com/n054/toolbelt/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/n054/toolbelt/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="gemnasium-toolbelt" class="anchor" href="#gemnasium-toolbelt" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gemnasium Toolbelt</h1>
+
+<p><a href="https://travis-ci.org/gemnasium/toolbelt"><img src="https://travis-ci.org/gemnasium/toolbelt.svg?branch=master" alt="Build Status"></a></p>
+
+<p>Gemnasium toolbelt is a CLI for the Gemnasium API.</p>
+
+<h2>
+<a id="how-to-install-it" class="anchor" href="#how-to-install-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to install it?</h2>
+
+<h3>
+<a id="on-mac-os-x" class="anchor" href="#on-mac-os-x" aria-hidden="true"><span class="octicon octicon-link"></span></a>On Mac OS X</h3>
+
+<p>A Homebrew formula is available for you to use. Just run</p>
+
+<pre><code>brew tap gemnasium/gemnasium
+</code></pre>
+
+<p>And then</p>
+
+<pre><code>brew install gemnasium-toolbelt
+</code></pre>
+
+<h3>
+<a id="ubuntu-and-debian" class="anchor" href="#ubuntu-and-debian" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ubuntu and Debian</h3>
+
+<h4>
+<a id="configure-gemnasium-repository" class="anchor" href="#configure-gemnasium-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure Gemnasium repository</h4>
+
+<pre><code>sudo sh -c 'echo "deb http://apt.gemnasium.com stable main" &gt; /etc/apt/sources.list.d/gemnasium.list'
+</code></pre>
+
+<h4>
+<a id="trust-gemnasium-gpg-key" class="anchor" href="#trust-gemnasium-gpg-key" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trust Gemnasium GPG key</h4>
+
+<pre><code>sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E5CEAB0AC5F1CA2A
+</code></pre>
+
+<h4>
+<a id="update-package-list" class="anchor" href="#update-package-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update package list</h4>
+
+<pre><code>sudo apt-get update
+</code></pre>
+
+<h4>
+<a id="install-gemnasium-toolbelt" class="anchor" href="#install-gemnasium-toolbelt" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Gemnasium toolbelt</h4>
+
+<pre><code>sudo apt-get install gemnasium-toolbelt
+</code></pre>
+
+<p>The <code>gemnasium</code> command will be available in <code>/usr/bin/gemnasium</code></p>
+
+<h3>
+<a id="from-source" class="anchor" href="#from-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>From source</h3>
+
+<pre><code>go build -o gemnasium
+</code></pre>
+
+<p>(or <code>gemnasium.exe</code> for windows users)</p>
+
+<h3>
+<a id="binaries" class="anchor" href="#binaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Binaries</h3>
+
+<p>Binaries are available in the <a href="https://github.com/gemnasium/toolbelt/releases">releases</a> page.</p>
+
+<h2>
+<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it?</h2>
+
+<h3>
+<a id="authentication" class="anchor" href="#authentication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authentication</h3>
+
+<p>Gemnasium Toolbelt stores your Gemnasium API key into your .netrc file.</p>
+
+<p>To be logged in to Gemnasium, you need to run <code>gemnasium auth login</code> and enter your Gemnasium credentials.</p>
+
+<p>Alternatively, you can pass directly your API token to all commands with the option <code>--token</code> or the env var <code>GEMNASIUM_TOKEN</code>.
+Your API token is available in your settings page (<a href="https://gemnasium.com/settings">https://gemnasium.com/settings</a>).</p>
+
+<h3>
+<a id="create-a-new-project" class="anchor" href="#create-a-new-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new project</h3>
+
+<p>To create a new project on Gemnasium, you need to <code>cd</code> into your project directory and run</p>
+
+<pre><code>gemnasium projects create
+</code></pre>
+
+<h3>
+<a id="configure-an-existing-project" class="anchor" href="#configure-an-existing-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure an existing project</h3>
+
+<p>If your project is already on Gemnasium, you need to <code>cd</code> into your project directory and run</p>
+
+<pre><code>gemnasium configure [project_slug]
+</code></pre>
+
+<p>You will need your project's Slug (available in your project page settings).
+A sample configuration file is available here: <a href="https://github.com/gemnasium/toolbelt/blob/master/config/gemnasium.yml.example">https://github.com/gemnasium/toolbelt/blob/master/config/gemnasium.yml.example</a> </p>
+
+<h3>
+<a id="push-dependency-files" class="anchor" href="#push-dependency-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Push dependency files</h3>
+
+<p>For projects not automatically synced with Github or Gitlab, you may want to push your files directly to Gemnasium.
+The corresponding project will updated soon after the files have been received. To push your files</p>
+
+<pre><code>gemnasium dependency_files push -f=Gemfile,Gemfile.lock
+</code></pre>
+
+<h3>
+<a id="live-evaluation" class="anchor" href="#live-evaluation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Live Evaluation</h3>
+
+<p>If you want to evaluate your project without pushing files or pulling info from Gemnasium, you may use the <code>eval</code> command:</p>
+
+<pre><code>gemnasium eval -f=Gemfile,Gemfile.lock
+</code></pre>
+
+<p>The command will exit with a code 1 if the project global status is "red".</p>
+
+<p>(a Gold subscription is required for this feature)</p>
+
+<h3>
+<a id="auto-update" class="anchor" href="#auto-update" aria-hidden="true"><span class="octicon octicon-link"></span></a>Auto Update</h3>
+
+<p>Auto-Update will fetch update sets from Gemnasium and run your test suite against them.
+The test suite can be passed as arguments, or through the env var GEMNASIUM_TESTSUITE.</p>
+
+<p>Examples:</p>
+
+<pre><code>GEMNASIUM_TESTSUITE="bundle exec rake" GEMNASIUM_PROJECT_SLUG=a907c0f9b8e0b89f23f0042d76ae0358 gemnasium autoupdate
+
+cat script.sh | gemnasium autoupdate -p=your_project_slug
+
+gemnasium autoupdate my_project_slug bundle exec rake
+</code></pre>
+
+<p>Typically, this command is to be used with a CI server, along with nightly builds. 
+Although Gemnasium will optimize as much as possible the number of combinations, the number of iterations isn't predictable, and your test suite might be running for a long time.
+To avoid looping to death, the command will stop looping after 1 hour and exit.
+As soon as a valid update set is found, the loop will stop, and Gemnasium is notified. A patch will be available to download a few seconds later.
+We will propose soon an option to open Pull Requests directly on GitHub.</p>
+
+<p>Currently, only Ruby projects are supported. Follow us to get the latest updates: <a href="https://twitter.com/gemnasiumapp">https://twitter.com/gemnasiumapp</a></p>
+
+<p>(Needs a paid plan)</p>
+
+<h2>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>The configuration can be saved in <code>.gemnasium.yml</code> files in the project directory.
+Options set in <code>.gemnasium.yml</code> are overriden by env vars:</p>
+
+<ul>
+<li>
+<strong>GEMNASIUM_PROJECT_SLUG</strong>: override -project flag and project_slug in .gemnasium.yml.</li>
+<li>
+<strong>GEMNASIUM_TESTSUITE</strong>: will be run for each iteration over update sets. This is typically your test suite script.</li>
+<li>
+<strong>GEMNASIUM_BUNDLE_INSTALL_CMD</strong>: [Ruby Only] during each iteration, the new bundle will be installed. Default: "bundle install"</li>
+<li>
+<strong>GEMNASIUM_BUNDLE_UPDATE_CMD</strong>: [Ruby Only] during each iteration, some gems might be updated. This command will be used. Default: "bundle update"</li>
+<li>
+<strong>BRANCH</strong>: Current branch can be specified with this var, if the git command fails to run (git rev-parse --abbrev-ref HEAD).</li>
+<li>
+<strong>REVISION</strong>: Current revision can be specified with this var, if the git command fails to run (git rev-parse --abbrev-ref HEAD)</li>
+<li>
+<strong>GEMNASIUM_TOKEN</strong>: Your API private token (available in your account settings <a href="https://gemnasium.com/settings">https://gemnasium.com/settings</a>)</li>
+<li>
+<strong>GEMNASIUM_IGNORED_PATHS</strong>: A list of paths separated by "," where dependency files are ignored.</li>
+<li>
+<strong>GEMNASIUM_RAW_FORMAT</strong>: Display API raw json output (for debug)</li>
+<li>
+<p><strong>NETRC_PATH</strong>: Location of your .netrc file (default: ~/.netrc)</p>
+
+<p>and env vars are overriden by command line options.
+Ex: </p>
+</li>
+</ul>
+
+<pre><code>echo 'project_slug: tic' &gt; .gemnasium.yml ; GEMNASIUM_PROJECT_SLUG="tac" gemnasium projects show toe
+=&gt; [toe project details]
+</code></pre>
+
+<p>To obtain the list of env vars used and set:</p>
+
+<p>gemnasium env</p>
+
+<h3>
+<a id="need-further-help" class="anchor" href="#need-further-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Need further help?</h3>
+
+<p>A full commands documentation is available by running</p>
+
+<pre><code>gemnasium [command] --help
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/n054/toolbelt">Toolbelt</a> is maintained by <a href="https://github.com/n054">n054</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
